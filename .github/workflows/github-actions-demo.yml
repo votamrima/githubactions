@@ -1,0 +1,23 @@
+name: Test workflow
+
+  #on:
+  #  push:
+  #    branches:
+  #      - "main"
+  #      - "branch1"
+  #  pull_request:
+  #    branches:
+  #      - "pullbranch"
+
+on: [push, pull_request]
+
+jobs:
+  atestjob:
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: pulling git repo
+        uses:  actions/checkout@v2
+      - name: say hello
+        run: echo "huhu" > /tmp/fuck
+
+
